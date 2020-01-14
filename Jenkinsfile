@@ -7,10 +7,10 @@ pipeline{
      sh 'docker tag rhel rhel:1.0' 
       }
      }
-    stage ('Storing Image in JFrog'){
+    /*stage ('Storing Image in JFrog'){
      steps {
        
-      }}
+      }}*/
 
  }
 }
