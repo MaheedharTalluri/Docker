@@ -3,14 +3,16 @@ pipeline{
   stages{
     stage ('Create Docker Image' ){
      steps{
-     sh 'sudo docker build -t rhel .'
-     sh 'sudo docker tag rhel rhel:1.0' 
+     /*sh 'sudo docker build -t rhel .'
+     sh 'sudo docker tag rhel 3.15.143.62:8081/docker-local/rhel:latest'*/
+		app = docker.build ( "rhel" )
       }
      }
-    /*stage ('Storing Image in JFrog'){
+    stage ('Storing Image in JFrog'){
      steps {
-       
-        **}}*/
+       docker.withRegistry('3.15.143.62:8081/docker-local' , 'docker_creds')
+	   app.push("latest")
+        }}
 
  }
 }
