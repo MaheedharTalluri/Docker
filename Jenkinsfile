@@ -1,5 +1,9 @@
 pipeline{
  agent any 
+ environment {
+    registry = "3.15.143.62:8081/docker-local"
+    registryCredential = ‘docker_creds’
+}
   stages{
     stage ('Create Docker Image' ){
      steps{
