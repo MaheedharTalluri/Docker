@@ -10,7 +10,7 @@ pipeline{
     /*stage ('Storing Image in JFrog'){
      steps {
        
-      }}*/
+        }}*/
 
  }
 }
