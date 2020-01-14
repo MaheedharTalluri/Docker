@@ -16,7 +16,7 @@ pipeline{
     stage ('Storing Image in JFrog'){
      steps {
 	  script{
-       docker.withRegistry('http://3.15.143.62:8081/docker-local' , 'docker_creds')
+       docker.withRegistry('3.15.143.62:8081/docker-local' , 'docker_creds')
 	   app.push("latest")
         }}}
 
