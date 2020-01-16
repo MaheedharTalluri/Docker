@@ -20,12 +20,12 @@ pipeline{
 	  script{
 
     	docker.withRegistry('http://52.14.156.42:8081', registryCredential ) 
-	app.push()
 
 {
 
         /* Push the container to the custom Registry */
-        //app.push()
+        def app =  docker.build registry + "/rhel:latest"
+	app.push()
     
 }
 
