@@ -17,6 +17,7 @@ pipeline{
         def app =  docker.build registry + "/rhel:latest"
 	app.push()
     
+
 }
 
 }}}
