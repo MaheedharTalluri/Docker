@@ -24,7 +24,7 @@ pipeline{
  
 	// Push a docker image to Artifactory (here we're pushing hello-world:latest). The push method also expects
 	// Artifactory repository name:
-	def buildInfo = rtDocker.push(app, docker-local)
+	//def buildInfo = rtDocker.push(app, docker-local)
 	// Publish the build-info to Artifactory:
 	//server.publishBuildInfo buildInfo
 	
