@@ -10,7 +10,7 @@ pipeline{
      /*sh 'sudo docker build -t rhel .'
      sh 'sudo docker tag rhel 3.15.143.62:8081/docker-local/rhel:latest'*/
 	    script{
-	        docker.build registry + "rhel"
+	        docker.build registry + ":rhel"
 		//def app = docker.build ( "rhel" )
       }}
      }
@@ -18,7 +18,7 @@ pipeline{
      steps {
 	  script{
        docker.withRegistry('' , registryCredential )
-	   app.push("latest")
+	   dockerImage.push("")
 }}}
 
 
