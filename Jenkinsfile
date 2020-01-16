@@ -17,9 +17,10 @@ pipeline{
     stage ('Storing Image in JFrog'){
      steps {
 	  script{
-       docker.withRegistry(registry, registryCredential )
+       	   docker.withRegistry(registry, registryCredential)
 	   dockerImage.push("")
 }}}
+
 
 
  }
