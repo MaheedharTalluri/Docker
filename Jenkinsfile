@@ -18,8 +18,9 @@ pipeline{
 	  script{
        docker.withRegistry('' , registryCredential )
 	   app.push("latest")
-        }}}
+}}}
 
 
  }
+
 }
