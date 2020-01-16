@@ -19,7 +19,7 @@ pipeline{
      steps {
 	  script{
 
-    	docker.withRegistry('http://52.14.156.42:8081', registryCredential ) {
+    	docker.withRegistry('52.14.156.42:8081', registryCredential ) {
 
         /* Push the container to the custom Registry */
         app.push()
