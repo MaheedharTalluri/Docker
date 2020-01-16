@@ -18,9 +18,10 @@ pipeline{
     stage ('Storing Image in JFrog'){
      steps {
 	  script{
-       	  // docker.withRegistry(registry, registryCredential)
+       	   docker.withRegistry(registry, registryCredential)
+	   app.push()
 	  //dockerImage.push("")
-	 def rtDocker = Artifactory.docker credentialsId: registryCredential
+	 //def rtDocker = Artifactory.docker credentialsId: registryCredential
  
 	// Push a docker image to Artifactory (here we're pushing hello-world:latest). The push method also expects
 	// Artifactory repository name:
