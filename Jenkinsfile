@@ -18,8 +18,17 @@ pipeline{
     stage ('Storing Image in JFrog'){
      steps {
 	  script{
-       	   docker.withRegistry(registry, registryCredential)
-	   app.push()
+
+    	docker.withRegistry('http://52.14.156.42:8081', 'registryCredential') {
+
+        /* Push the container to the custom Registry */
+        app.push()
+    
+}
+
+
+       	   //docker.withRegistry(registry, registryCredential)
+	   //app.push()
 	  //dockerImage.push("")
 	 //def rtDocker = Artifactory.docker credentialsId: registryCredential
  
