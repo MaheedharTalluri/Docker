@@ -3,6 +3,7 @@ pipeline{
  environment {
     registry = "52.14.156.42:8081/docker-local"
     registryCredential = 'docker_creds'
+    uri = "tcp://52.14.156.42:8081"
 }
   stages{
     stage ('Create Docker Image' ){
@@ -17,7 +18,7 @@ pipeline{
     stage ('Storing Image in JFrog'){
      steps {
 	  script{
-       	   docker.withRegistry(registry, registryCredential)
+       	   docker.withServer(uri, registryCredential)
 	   dockerImage.push("")
 }}}
 
