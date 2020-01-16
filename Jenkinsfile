@@ -10,14 +10,14 @@ pipeline{
      /*sh 'sudo docker build -t rhel .'
      sh 'sudo docker tag rhel 3.15.143.62:8081/docker-local/rhel:latest'*/
 	    script{
-	        docker.build registry + ":rhel"
+	        docker.build registry + "/rhel:latest"
 		//def app = docker.build ( "rhel" )
       }}
      }
     stage ('Storing Image in JFrog'){
      steps {
 	  script{
-       docker.withRegistry('' , registryCredential )
+       docker.withRegistry(registry, registryCredential )
 	   dockerImage.push("")
 }}}
 
