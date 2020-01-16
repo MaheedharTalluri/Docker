@@ -11,15 +11,24 @@ pipeline{
      /*sh 'sudo docker build -t rhel .'
      sh 'sudo docker tag rhel 3.15.143.62:8081/docker-local/rhel:latest'*/
 	    script{
-	        docker.build registry + "/rhel:latest"
+	       def app =  docker.build registry + "/rhel:latest"
 		//def app = docker.build ( "rhel" )
       }}
      }
     stage ('Storing Image in JFrog'){
      steps {
 	  script{
-       	   docker.withRegistry([registry, registryCredential])
-	   dockerImage.push("")
+       	  // docker.withRegistry(registry, registryCredential)
+	  //dockerImage.push("")
+	 def rtDocker = Artifactory.docker credentialsId: docker_creds
+ 
+	// Push a docker image to Artifactory (here we're pushing hello-world:latest). The push method also expects
+	// Artifactory repository name:
+	def buildInfo = rtDocker.push(app, docker-local)
+	// Publish the build-info to Artifactory:
+	//server.publishBuildInfo buildInfo
+	
+
 }}}
 
 
