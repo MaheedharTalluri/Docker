@@ -20,7 +20,7 @@ pipeline{
 	  script{
        	  // docker.withRegistry(registry, registryCredential)
 	  //dockerImage.push("")
-	 def rtDocker = Artifactory.docker credentialsId: docker_creds
+	 def rtDocker = Artifactory.docker credentialsId: registryCredential
  
 	// Push a docker image to Artifactory (here we're pushing hello-world:latest). The push method also expects
 	// Artifactory repository name:
