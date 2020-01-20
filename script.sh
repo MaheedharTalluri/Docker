@@ -3,31 +3,31 @@
 #default home directory 
 home=/home/ec2-user
 #Creating Default Folder
-mkdir default
+mkdir $home/default
 sudo touch $home/default/a.txt
 sudo touch $home/default/c.txt
 sudo touch $home/default/e.txt
 
 # Creating folder 1
-mkdir 1
+mkdir $home/1
 sudo touch $home/1/b.txt
 sudo touch $home/1/c.txt
 sudo touch $home/1/f.txt
 
 #Creating folder 2
-mkdir 2
+mkdir $home/2
 sudo touch $home/2/a.txt
 sudo touch $home/2/c.txt
 sudo touch $home/2/d.txt
 
 #Creating folder 3
-mkdir 3
+mkdir $home/3
 sudo touch $home/3/g.txt
 sudo touch $home/3/a.txt
 sudo touch $home/3/d.txt
 
 #Creating folder 4
-mkdir 4
+mkdir $home/4
 sudo touch $home/4/h.txt
 sudo touch $home/4/a.txt
 sudo touch $home/4/b.txt
