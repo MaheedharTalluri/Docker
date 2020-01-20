@@ -1,7 +1,7 @@
 pipeline{
  agent any 
  environment {
-    registry = "52.14.156.42:8081/docker-local"
+    registry = "18.218.198.252:8081/docker-local"
     registryCredential = 'docker_creds'
     uri = "52.14.156.42:8081"
 }
@@ -10,7 +10,7 @@ pipeline{
      steps {
 	  script{
 
-    	docker.withRegistry('http://52.14.156.42:8081', registryCredential ) 
+    	docker.withRegistry('http://18.218.198.252:8081', registryCredential ) 
 
 {
         /* Push the container to the custom Registry */
