@@ -61,7 +61,7 @@ for i in "${a[@]}"
    
     FILE=$home/${f[$j]}/$i
     if test -f "$FILE"; then
-       echo "$i	::	$FILE" >> result.txt
+       echo "$i	::	$FILE" >> $home/result.txt
        break
     fi
    done
