@@ -46,9 +46,9 @@ for i in "${a[@]}"
  done
 
 #Remove the older rexult file and creating a new one
-rm -rf rexult.txt
+rm -rf result.txt
 
-sudo touch rexult.txt
+sudo touch result.txt
 
 
 
