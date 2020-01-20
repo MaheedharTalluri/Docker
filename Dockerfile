@@ -9,4 +9,4 @@ COPY  script.sh /usr/src/scripts
 
 EXPOSE 8080
 
-RUN chmod +x /usrsrc/scripts/script.sh
+RUN chmod +x /usr/src/scripts/script.sh
