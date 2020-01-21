@@ -1,9 +1,9 @@
 pipeline{
  agent any 
  environment {
-    registry = "18.218.198.252:8081/docker-local"
+    registry = "3.136.236.125:8081/docker-local"
     registryCredential = 'docker_creds'
-    uri = "52.14.156.42:8081"
+    uri = "3.136.236.125:8081"
 }
   stages{
      stage (' Build and push Image to JFrog'){
