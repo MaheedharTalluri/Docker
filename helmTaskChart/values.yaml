@@ -6,7 +6,7 @@ replicaCount: 2
 
 image:
   repository: nginx
-  pullPolicy: always
+  pullPolicy: Always
 
 imagePullSecrets: []
 nameOverride: ""
@@ -33,7 +33,7 @@ securityContext: {}
 service:
   type: NodePort
   port: 80
-  targetPort: 8080	
+  targetPort: 8080
 ingress:
   enabled: false
   annotations: {}
