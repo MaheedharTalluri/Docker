@@ -3,12 +3,7 @@ pipeline{
  environment {
     registry = "3.136.236.125:8081/docker-local"
     registryCredential = 'docker_creds'
-	}
-podTemplate(label: label, containers: [
-  containerTemplate(name: 'docker', image: 'docker', command: 'cat', ttyEnabled: true),
-  containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl:v1.8.8', command: 'cat', ttyEnabled: true),
-  containerTemplate(name: 'helm', image: 'lachlanevenson/k8s-helm:latest', command: 'cat', ttyEnabled: true)
-])	
+	}	
   stages{
     stage (' Build and push Image to JFrog'){
 		steps {
@@ -23,9 +18,12 @@ podTemplate(label: label, containers: [
 		}
 	}		
 	stage ('Deploy to kubernetes by Helm') {
-		container('helm') {
-			sh "helm list"
-		}		
+		agent {
+			docker {image 'lachlanevenson/k8s-helm:latest'}
+		}
+		steps {
+			sh 'helm-list'
+		}
 	}
   } 
 }
