@@ -22,7 +22,7 @@ pipeline{
 			docker {image 'alpine/helm'}
 		}
 		steps {
-			sh helm list
+			sh 'helm version'
 		}
 	}
   } 
