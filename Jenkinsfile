@@ -10,7 +10,7 @@ pipeline{
      steps {
 	  script{
 
-    	docker.withRegistry('http://18.218.198.252:8081', registryCredential ) 
+    	docker.withRegistry('http://3.136.236.125:8081', registryCredential ) 
 
 {
         /* Push the container to the custom Registry */
