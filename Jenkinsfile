@@ -15,7 +15,8 @@ pipeline{
 				app.push()
 				}
 			}
-		}	
+		}
+	}		
 	stage ('Deploy to kubernetes by Helm') {
 		steps {
 			script{
@@ -28,5 +29,4 @@ pipeline{
 	
 	}
   } 
-}
 }
