@@ -19,7 +19,7 @@ pipeline{
 	}
 	stage ('Deploy to kubernetes by Helm') {
 		steps {
-			sh '/helm init --client-only --skip-refresh'
+			sh 'helm init --client-only --skip-refresh'
 		}
 	}
   }
