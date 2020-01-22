@@ -18,12 +18,11 @@ volumes: [
         //     docker build -t namespace/my-image:latest .
         //     //docker push namespace/my-image:${gitCommit}
         //     """
-        //
+        //}
 
         sh "docker build -t namespace/my-image:latest ."
         }
-      }
     }
 
 
-   }
+ }
