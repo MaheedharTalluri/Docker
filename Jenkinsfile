@@ -20,7 +20,8 @@ pipeline{
 	}
      stage ('Test kubectl') {
            steps {
-           sh 'sudo -H -u ec2-user bash -c  "kubectl create deployment nginx --image=nginx"'
+           sh 'sudo -H -u ec2-user bash -c  "helm list"'
+          // sh 'sudo -H -u ec2-user bash -c  "kubectl uod deployment nginx --image=nginx"'
            }
 
 	}
