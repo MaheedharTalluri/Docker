@@ -28,8 +28,11 @@ volumes: [
 		}
 	}
 	stage ('Deploy to kubernetes by Helm') {
-              container('helm') {
+             setps {
+             container('helm') {
                  sh "helm list"  }
+             }
+
 
 	}
   }
