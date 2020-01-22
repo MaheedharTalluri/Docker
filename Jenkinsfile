@@ -9,9 +9,7 @@ volumes:[
 ]
 
 
-
-pipeline {
- {
+{
     stage('Push') {
       steps {
         container('docker') {
@@ -22,4 +20,3 @@ pipeline {
       }
     }
    }
-  }
