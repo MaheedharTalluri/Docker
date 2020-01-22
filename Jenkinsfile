@@ -27,16 +27,18 @@ volumes: [
 			}
 		}
 	}
-	stage ('Deploy to kubernetes by Helm') {
-             setps {
-                   script {
-                         container('helm') {
-                         sh "helm list"  }
-                        }
-
-             }
 
 
-	}
+                stage('Deployment') {
+                    steps {
+                          script {
+                                 container('helm') {
+                                 // Init authentication and config for your kubernetes cluster
+                                 sh("helm init --client-only --skip-refresh")
+                                  sh("helm upgrade --install --wait prod-my-app ./helm --namespace prod")
+                    }
+                }
+            }
+        }
   }
 }
