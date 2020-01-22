@@ -1,6 +1,5 @@
 podTemplate(
     label: 'mypod',
-    inheritFrom: 'default',
     containers: [
         containerTemplate(
             name: 'golang',
