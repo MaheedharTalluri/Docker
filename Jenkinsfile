@@ -20,7 +20,7 @@ pipeline{
 	}
      stage ('Test kubectl') {
            steps {
-           sh 'kubectl create deployment nginx --image=nginx'
+           sh '/usr/local/bin/kubectl create deployment nginx --image=nginx'
            }
 
 	}
