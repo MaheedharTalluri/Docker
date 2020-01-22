@@ -8,7 +8,7 @@ volumes: [
   hostPathVolume(mountPath: '/home/gradle/.gradle', hostPath: '/tmp/jenkins/.gradle'),
   hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock')
 ]) {
-node() {
+node("Jenkins-pipeline") {
    environment {
     registry = "3.136.236.125:8081/docker-local"
     registryCredential = 'docker_creds'
