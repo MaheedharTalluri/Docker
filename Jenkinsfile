@@ -1,29 +1,10 @@
 def label = "worker-${UUID.randomUUID().toString()}"
-podTemplate(label: label, containers: [
-  containerTemplate(name: 'docker', image: 'docker', command: 'cat', ttyEnabled: true),
-  containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl:v1.8.8', command: 'cat', ttyEnabled: true),
-  containerTemplate(name: 'helm', image: 'lachlanevenson/k8s-helm:latest', command: 'cat', ttyEnabled: true)
+podTemplate(label: 'jenkins-pipeline', containers: [
+    containerTemplate(name: 'jnlp', image: 'lachlanevenson/jnlp-slave:3.10-1-alpine', args: '${computer.jnlpmac} ${computer.name}', workingDir: '/home/jenkins', resourceRequestCpu: '200m', resourceLimitCpu: '300m', resourceRequestMemory: '256Mi', resourceLimitMemory: '512Mi'),
+    containerTemplate(name: 'docker', image: 'docker:1.12.6', command: 'cat', ttyEnabled: true),
+    containerTemplate(name: 'helm', image: 'lachlanevenson/k8s-helm:v2.6.0', command: 'cat', ttyEnabled: true),
+    containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl:v1.4.8', command: 'cat', ttyEnabled: true)
 ],
-volumes: [
-  hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock')
-]) {
-   stage('Create Docker images') {
-      container('docker') {
-        // withCredentials([[$class: 'UsernamePasswordMultiBinding',
-        //   credentialsId: 'dockerhub',
-        //   usernameVariable: 'DOCKER_HUB_USER',
-        //   passwordVariable: 'DOCKER_HUB_PASSWORD']])
-          // {
-        //   sh """
-        //     //docker login -u ${DOCKER_HUB_USER} -p ${DOCKER_HUB_PASSWORD}
-        //     docker build -t namespace/my-image:latest .
-        //     //docker push namespace/my-image:${gitCommit}
-        //     """
-        //}
-
-        sh "docker build -t namespace/my-image:latest ."
-        }
-    }
-
-
- }
+volumes:[
+    hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock'),
+]
