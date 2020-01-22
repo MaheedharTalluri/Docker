@@ -22,7 +22,7 @@ pipeline{
            steps {
            //sh 'sudo -H -u ec2-user bash -c "helm repo add stable https://kubernetes-charts.storage.googleapis.com"'
            sh 'sudo -H -u ec2-user bash -c "helm list"'
-           sh 'sudo -H -u ec2-user bash -c "helm install stable/nginx-ingress"'
+           sh 'sudo -H -u ec2-user bash -c "helm install --name leo stable/nginx-ingress"'
           // sh 'sudo -H -u ec2-user bash -c  "kubectl uod deployment nginx --image=nginx"'
            }
 
