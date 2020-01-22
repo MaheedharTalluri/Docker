@@ -18,12 +18,4 @@ pipeline{
 			}
 		}
 	}		
-	stage ('Deploy to kubernetes by Helm') {
-		agent {
-			docker {image 'alpine/helm'}
-		}
-		steps {
-			sh helm list
-		}
-	}
   } 
