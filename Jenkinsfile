@@ -21,7 +21,7 @@ pipeline{
      stage ('Test kubectl') {
            steps {
            //sh 'sudo -H -u ec2-user bash -c "helm repo add stable https://kubernetes-charts.storage.googleapis.com"'
-           sh 'sudo -H -u ec2-user bash -c "helm upgrade install leo stable/nginx-ingress"'
+           sh 'sudo -H -u ec2-user bash -c "helm upgrade leo stable/nginx-ingress"'
            sh 'sudo -H -u ec2-user bash -c "helm list"'
            }
 
