@@ -20,7 +20,7 @@ pipeline{
 	}
      stage ('Test kubectl') {
            steps {
-           sh 'sudo -H -u ec2-user bash -c  "helm instal my-release stable/nginx-ingress"'
+           sh 'sudo -H -u ec2-user bash -c  "helm instal stable/nginx-ingress"'
           // sh 'sudo -H -u ec2-user bash -c  "kubectl uod deployment nginx --image=nginx"'
            }
 
