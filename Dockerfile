@@ -7,9 +7,9 @@ WORKDIR /usr/src/scripts
 
 COPY  script.sh /usr/src/scripts/
 
+EXPOSE 8080
 
+CMD ["chmod", "+x", "/usr/src/scripts/script.sh"]
 
-RUN chmod +x /usr/src/scripts/script.sh
-#EXPOSE 8080
 #ENTRYPOINT ["/usr/src/scripts/script.sh"]
 #CMD ["/bin/bash"]
