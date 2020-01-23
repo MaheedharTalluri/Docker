@@ -10,5 +10,5 @@ COPY  script.sh /usr/src/scripts/
 EXPOSE 8080
 
 CMD ["chmod", "+x", "/usr/src/scripts/script.sh"]
-#ENTRYPOINT ["/usr/src/scripts/script.sh"]
-CMD [ "/usr/src/scripts/script.sh", "run"]
+ENTRYPOINT ["/bin/bash", "-c",  "/usr/src/scripts/script.sh"]
+#CMD [ "/usr/src/scripts/script.sh", "run"]
