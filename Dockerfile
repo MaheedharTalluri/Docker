@@ -28,13 +28,19 @@ MAINTAINER The CentOS Project <cloud-ops@centos.org>
 LABEL Vendor="CentOS" \
       License=GPLv2 \
       Version=2.4.6-40
+RUN mkdir -p /usr/src/scripts
+
+WORKDIR /usr/src/scripts
+
+COPY  script.sh /usr/src/scripts/
+CMD ["chmod", "+x", "/usr/src/scripts/script.sh"]
 
 
 RUN yum -y --setopt=tsflags=nodocs update && \
     yum -y --setopt=tsflags=nodocs install httpd && \
     yum clean all
 
-EXPOSE 80
+EXPOSE 80 8080
 
 # Simple startup script to avoid some issues observed with container restart
 #ADD run-httpd.sh /run-httpd.sh
