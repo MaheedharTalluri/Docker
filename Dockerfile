@@ -37,7 +37,16 @@ RUN yum -y --setopt=tsflags=nodocs update && \
 EXPOSE 80
 
 # Simple startup script to avoid some issues observed with container restart
-ADD run-httpd.sh /run-httpd.sh
-RUN chmod -v +x /run-httpd.sh
+#ADD run-httpd.sh /run-httpd.sh
+#RUN chmod -v +x /run-httpd.sh
 
-CMD ["/run-httpd.sh"]
+#CMD ["/run-httpd.sh"]
+
+#!/bin/bash
+
+# Make sure we're not confused by old, incompletely-shutdown httpd
+# context after restarting the container.  httpd won't start correctly
+# if it thinks it is already running.
+RUN rm -rf /run/httpd/* /tmp/httpd*
+
+CMD ["/usr/sbin/apachectl", "-DFOREGROUND"]
