@@ -7,6 +7,6 @@ MAINTAINER team@wipro.com
 
 #COPY  script.sh .
 
-#EXPOSE 8080
+EXPOSE 8080
 
 #RUN chmod +x /usr/src/scripts/script.sh
