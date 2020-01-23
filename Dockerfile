@@ -1,4 +1,4 @@
-FROM lionelman45/rhel7
+FROM clojure:alpine
 MAINTAINER team@wipro.com
 
 #RUN mkdir -p /usr/src/scripts
