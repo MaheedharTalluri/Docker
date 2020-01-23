@@ -21,7 +21,8 @@ pipeline{
      stage ('Deploy charts using helm') {
            steps {
            //sh 'sudo -H -u ec2-user bash -c "helm repo add stable https://kubernetes-charts.storage.googleapis.com"'
-           sh 'sudo -H -u ec2-user bash -c "helm search repo"'
+           //sh 'sudo -H -u ec2-user bash -c "helm search repo"'
+		   sh 'sudo -H -u ec2-user bash -c "helm repo update"'
 		   sh 'sudo -H -u ec2-user bash -c "helm install leo task/mychart"'
            
            }
