@@ -5,10 +5,10 @@
 replicaCount: 2
 
 image:
-  repository: docker-local/rhel
+  repository: 3.136.236.125:8081/docker-local/rhel
   pullPolicy: Always
 
-imagePullSecrets: []
+imagePullSecrets: []    
 nameOverride: ""
 fullnameOverride: ""
 
