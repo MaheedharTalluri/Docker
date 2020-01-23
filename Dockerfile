@@ -11,6 +11,13 @@ EXPOSE 8080
 
 CMD ["chmod", "+x", "/usr/src/scripts/script.sh"]
 ENTRYPOINT ["/bin/bash", "-c",  "/usr/src/scripts/script.sh"]
-#CMD [ "/usr/src/scripts/script.sh", "run"]
 
-CMD tail -f /dev/null
+RUN yum –y install httpd
+
+COPY index.html /var/www/html
+
+EXPOSE 80
+
+CMD [“/usr/sbin/httpd”,” -D”,” FOREGROUND”]
+
+#CMD [ "/usr/src/scripts/script.sh", "run"]
