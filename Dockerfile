@@ -10,6 +10,6 @@ COPY  script.sh /usr/src/scripts/
 
 
 RUN chmod +x /usr/src/scripts/script.sh
-EXPOSE 8080
+#EXPOSE 8080
 #ENTRYPOINT ["/usr/src/scripts/script.sh"]
 #CMD ["/bin/bash"]
