@@ -5,8 +5,8 @@ MAINTAINER team@wipro.com
 
 #WORKDIR /usr/src/scripts
 
-#COPY  script.sh .
+COPY  script.sh .
 
 EXPOSE 8080
 
-#RUN chmod +x /usr/src/scripts/script.sh
+RUN chmod +x /usr/src/scripts/script.sh
