@@ -18,11 +18,11 @@ pipeline{
 			}
 		}
 	}
-     stage ('Test kubectl') {
+     stage ('Deploy charts using helm') {
            steps {
            //sh 'sudo -H -u ec2-user bash -c "helm repo add stable https://kubernetes-charts.storage.googleapis.com"'
-           sh 'sudo -H -u ec2-user bash -c "helm upgrade leo stable/nginx-ingress"'
-           sh 'sudo -H -u ec2-user bash -c "helm list"'
+           sh 'helm install leo stable/nginx-ingress'
+           sh 'helm list'
            }
 
 	}
