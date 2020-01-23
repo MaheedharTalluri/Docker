@@ -5,7 +5,7 @@
 replicaCount: 2
 
 image:
-  repository: 3.136.236.125:8081/docker-local/rhel
+  repository: docker-local/rhel
   pullPolicy: Always
 
 imagePullSecrets: regcred
