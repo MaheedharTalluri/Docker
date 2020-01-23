@@ -5,7 +5,7 @@
 replicaCount: 2
 
 image:
-  repository: task/mychart
+  repository: task/mychart:latest
   pullPolicy: Always
 
 imagePullSecrets: []
