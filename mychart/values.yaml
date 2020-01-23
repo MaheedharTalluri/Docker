@@ -8,7 +8,7 @@ image:
   repository: task/mychart:latest
   pullPolicy: Always
 
-imagePullSecrets: []
+imagePullSecrets: regcred
 nameOverride: ""
 fullnameOverride: ""
 
