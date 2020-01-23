@@ -8,7 +8,7 @@ image:
   repository: docker-local/rhel
   pullPolicy: Always
 
-imagePullSecrets: regcred
+imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
