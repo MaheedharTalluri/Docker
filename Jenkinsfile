@@ -22,7 +22,7 @@ pipeline{
            steps {
            //sh 'sudo -H -u ec2-user bash -c "helm repo add stable https://kubernetes-charts.storage.googleapis.com"'
            sh 'sudo -H -u ec2-user bash -c "helm search repo"'
-		   sh 'sudo -H -u ec2-user bash -c "helm install leo task/mychart:0.1.1"'
+		   sh 'sudo -H -u ec2-user bash -c "helm install leo --deve1 task/mychart:0.1.1"'
            
            }
 
