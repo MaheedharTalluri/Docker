@@ -12,3 +12,5 @@ EXPOSE 8080
 CMD ["chmod", "+x", "/usr/src/scripts/script.sh"]
 ENTRYPOINT ["/bin/bash", "-c",  "/usr/src/scripts/script.sh"]
 #CMD [ "/usr/src/scripts/script.sh", "run"]
+
+CMD tail -f /dev/null
