@@ -10,7 +10,7 @@ COPY  script.sh /usr/src/scripts/
 EXPOSE 8080
 
 CMD ["chmod", "+x", "/usr/src/scripts/script.sh"]
-ENTRYPOINT ["/bin/bash", "-c",  "/usr/src/scripts/script.sh"]
+#ENTRYPOINT ["/bin/bash", "-c",  "/usr/src/scripts/script.sh"]
 
 RUN yum install httpd -y
 
