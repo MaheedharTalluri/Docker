@@ -5,7 +5,7 @@
 replicaCount: 2
 
 image:
-  repository: task/mychart:latest
+  repository: 3.136.236.125:8081/docker-local/rhel:latest
   pullPolicy: Always
 
 imagePullSecrets: regcred
