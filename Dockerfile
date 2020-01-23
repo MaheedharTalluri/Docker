@@ -1,4 +1,4 @@
-FROM lionelman45/rhel7
+FROM centos:latest
 MAINTAINER team@wipro.com
 
 RUN mkdir -p /usr/src/scripts
@@ -12,7 +12,7 @@ EXPOSE 8080
 CMD ["chmod", "+x", "/usr/src/scripts/script.sh"]
 ENTRYPOINT ["/bin/bash", "-c",  "/usr/src/scripts/script.sh"]
 
-RUN yum –y install httpd
+RUN yum install httpd -y
 
 COPY index.html /var/www/html
 
