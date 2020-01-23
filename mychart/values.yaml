@@ -9,7 +9,7 @@ image:
   repository: 3.136.236.125:8081/docker-local/rhel
   pullPolicy: Always
 
-imagePullSecrets: regcred-1    
+imagePullSecrets: regcred-1
 nameOverride: ""
 fullnameOverride: ""
 

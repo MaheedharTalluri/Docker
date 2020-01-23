@@ -14,8 +14,10 @@ spec:
       labels:
         {{- include "mychart.selectorLabels" . | nindent 8 }}
     spec:
+      {{- if .Values.imagePullSecrets }}
       imagePullSecrets:
-        - name: {{ .Values.ImagePullSecrets }}
+        - name: {{ .Values.imagePullSecrets }}
+       {{- end }}
       serviceAccountName: {{ include "mychart.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
