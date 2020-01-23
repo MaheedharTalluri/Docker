@@ -5,7 +5,7 @@
 replicaCount: 2
 
 image:
-  repository: nginx
+  repository: task/mychart
   pullPolicy: Always
 
 imagePullSecrets: []
