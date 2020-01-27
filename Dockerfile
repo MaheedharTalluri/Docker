@@ -24,7 +24,7 @@
 # #CMD [ "/usr/src/scripts/script.sh", "run"]
 
 FROM centos:7
-MAINTAINER The CentOS Project <cloud-ops@centos.org>
+MAINTAINER team@wipro.com
 LABEL Vendor="CentOS" \
       License=GPLv2 \
       Version=2.4.6-40
@@ -56,3 +56,4 @@ EXPOSE 80 8080
 RUN rm -rf /run/httpd/* /tmp/httpd*
 
 CMD ["/usr/sbin/apachectl", "-DFOREGROUND"]
+
